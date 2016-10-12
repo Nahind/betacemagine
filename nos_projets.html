@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+<h2>Nos projets</h2>
+<p>Viverra vitae congue eu, consequat ac felis donec et odio pellentesque diam volutpat commodo sed egestas egestas fringilla. Id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit! Enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci.</p>
+<div class="domaines-container">
+  {% for type in site.data.settings.projects_type %}
+  <a class="domaine" href="#project-{{type.type}}" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-{{type.icon}}" aria-hidden="true"></i></a>
+  {% endfor %}
+</div>
+
+{% for type in site.data.settings.projects_type %}
+<div class="collapse" id="project-{{type.type}}">
+  <h3>Type de projet : {{type.type}}</h3>
+  {% for project in site.data.settings.projects %}
+  {% if project.type == type.type %}
+  <div class="row project-item">
+    <div class="col-md-4">
+      <div class="project-illustration" style="background-image: url('img/{{project.image}}')"></div>
+    </div>
+    <div class="col-md-6 project-text">
+      <h4 class="project-name">{{project.title}}</h4>
+      <p>
+        Felis eget velit aliquet sagittis id consectetur! At augue eget arcu dictum varius duis at consectetur lorem donec massa sapien, faucibus et molestie ac, feugiat sed lectus vestibulum mattis ullamcorper!
+      </p>
+    </div>
+    <div class="col-md-2 indicateurs-container">
+      <div class="indicateur">
+        <span class="indicateur-icon"><i class="fa fa-eur" aria-hidden="true"></i></span>
+        <span class="indicateur-text">100.000 €</span>
+      </div>
+      <div class="indicateur">
+        <span class="indicateur-icon"><i class="fa fa-clock-o" aria-hidden="true"></i>
+        </span>
+        <span class="indicateur-text">8 mois</span>
+      </div>
+      <div class="indicateur">
+        <span class="indicateur-icon"><i class="fa fa-check" aria-hidden="true"></i></span>
+        <span class="indicateur-text">Validé</span>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+{% endfor %}

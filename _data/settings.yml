@@ -1,0 +1,15 @@
+#--------------------
+# Project Section
+
+projects_type :
+  - {type: type_1, icon: calendar-o}
+  - {type: type_2, icon: building}
+  - {type: type_3, icon: bus}
+  - {type: type_4, icon: gavel}
+
+projects :
+  - {title: projet numéro 1, image: 1.jpg, type: type_1}
+  - {title: projet numéro 2, image: 2.jpg, type: type_3}
+  - {title: projet numéro 3, image: 3.jpg, type: type_1}
+  - {title: projet numéro 4, image: 4.jpg, type: type_4}
+  - {title: projet numéro 5, image: 5.jpg, type: type_2}
